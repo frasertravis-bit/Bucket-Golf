@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="Bucket Golf"/>
+<meta name="theme-color" content="#f7f6f2"/>
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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"/>
+<link rel="apple-touch-icon" sizes="152x152" href="data:image/png;base64,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"/>
+<link rel="apple-touch-icon" sizes="120x120" href="data:image/png;base64,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"/>
+<title>Bucket Golf</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --green:#3B6D11;--green-light:#4a8c1c;--green-bg:#EAF3DE;
+  --red:#993C1D;--red-bg:#FAECE7;
+  --blue:#185FA5;--blue-bg:#E6F1FB;
+  --purple:#534AB7;--purple-bg:#EEEDFE;
+  --gold:#BA7517;--gold-bg:#FAEEDA;
+  --bg:#f7f6f2;--surface:#ffffff;--surface2:#f0efe9;--surface3:#e8e7e0;
+  --text:#1a1a1a;--text2:#666;--text3:#aaa;
+  --border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.16);
+  --r:14px;--rsm:10px;--rxs:8px;
+  --font:'DM Sans',system-ui,sans-serif;
+  --display:'Bebas Neue',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html{height:100%;background:var(--bg);}
+body{
+  font-family:var(--font);color:var(--text);background:var(--bg);min-height:100%;
+  padding-top:calc(12px + env(safe-area-inset-top,0px));
+  padding-bottom:calc(20px + env(safe-area-inset-bottom,0px));
+  padding-left:calc(16px + env(safe-area-inset-left,0px));
+  padding-right:calc(16px + env(safe-area-inset-right,0px));
+  overscroll-behavior:none;
+}
+.app{max-width:460px;margin:0 auto;}
+.hdr{text-align:center;padding:8px 0 4px;}
+.hdr h1{font-family:var(--display);font-size:52px;letter-spacing:3px;line-height:1;color:var(--text);}
+.hdr p{font-size:13px;color:var(--text2);margin-top:2px;}
+.save-pill{display:flex;align-items:center;justify-content:center;gap:5px;font-size:11px;color:var(--text3);margin:6px 0 10px;}
+.save-dot{width:6px;height:6px;border-radius:50%;background:var(--green-light);flex-shrink:0;}
+.card{background:var(--surface);border-radius:var(--r);border:1px solid var(--border);padding:16px;margin-bottom:10px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:0 16px;height:44px;border-radius:var(--rsm);border:1px solid var(--border2);background:var(--surface2);color:var(--text);font-size:14px;font-family:var(--font);font-weight:500;cursor:pointer;-webkit-appearance:none;touch-action:manipulation;user-select:none;transition:transform 0.1s,opacity 0.12s;white-space:nowrap;}
+.btn:active{transform:scale(0.95);opacity:0.8;}
+.btn:disabled{opacity:0.3;pointer-events:none;}
+.btn-dark{background:var(--text);color:#fff;border-color:var(--text);}
+.btn-green{background:var(--green-light);color:#fff;border-color:var(--green);}
+.btn-red{background:var(--red-bg);color:var(--red);border-color:var(--red);}
+.lbl{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;}
+.count-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px;}
+.cnt-btn{aspect-ratio:1;border-radius:var(--rsm);border:1px solid var(--border2);background:var(--surface2);font-family:var(--display);font-size:28px;letter-spacing:1px;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;touch-action:manipulation;-webkit-appearance:none;transition:transform 0.1s;}
+.cnt-btn:active{transform:scale(0.9);}
+.pinput{display:flex;gap:10px;align-items:center;margin-bottom:8px;}
+.pinput input{flex:1;height:44px;padding:0 14px;border:1px solid var(--border2);border-radius:var(--rsm);font-size:16px;background:var(--surface);color:var(--text);font-family:var(--font);-webkit-appearance:none;outline:none;}
+.pinput input:focus{border-color:var(--blue);}
+.nbadge{width:32px;height:32px;border-radius:50%;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:var(--text2);flex-shrink:0;}
+.topbar{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px;}
+.hole-big{font-family:var(--display);font-size:40px;letter-spacing:1px;line-height:1;}
+.hole-sm{font-size:12px;color:var(--text2);margin-top:3px;}
+.hdots{display:flex;gap:5px;justify-content:center;margin:12px 0 8px;}
+.hdot{width:8px;height:8px;border-radius:50%;background:var(--surface3);flex-shrink:0;transition:background 0.25s,transform 0.25s;}
+.hdot.done{background:var(--green-light);}
+.hdot.cur{background:var(--blue);transform:scale(1.4);}
+.prow{border:1px solid var(--border);border-radius:var(--rsm);padding:12px;margin-bottom:8px;background:var(--surface);transition:border-color 0.3s,background 0.3s;}
+.pname{font-size:15px;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+.pname-tag{font-size:11px;font-weight:500;color:var(--text2);}
+.chips{display:flex;gap:5px;margin-bottom:10px;}
+.chip{flex:1;display:flex;flex-direction:column;align-items:center;background:var(--surface2);border-radius:var(--rxs);padding:5px 4px;}
+.chip-lbl{font-size:9px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:0.05em;white-space:nowrap;}
+.chip-val{font-size:15px;font-weight:600;color:var(--text);margin-top:2px;line-height:1;}
+.chip-val.fire{color:var(--red);}
+.stroke-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.stroke-lbl{font-size:13px;color:var(--text2);white-space:nowrap;}
+.stroke-sel{flex:1;height:44px;padding:0 30px 0 12px;border:1px solid var(--border2);border-radius:var(--rsm);font-size:16px;background:var(--surface);color:var(--text);font-family:var(--font);-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23aaa'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;cursor:pointer;}
+
+/* Hazard counter rows */
+.hazard-section{display:flex;flex-direction:column;gap:7px;}
+.hazard-row{display:flex;align-items:center;gap:8px;background:var(--surface2);border-radius:var(--rxs);padding:6px 10px;}
+.hazard-icon{font-size:15px;flex-shrink:0;}
+.hazard-label{font-size:12px;font-weight:500;color:var(--text2);flex:1;}
+.hazard-count{font-size:15px;font-weight:700;min-width:22px;text-align:center;}
+.hazard-count.blue{color:var(--blue);}
+.hazard-count.purple{color:var(--purple);}
+.pm-btn{width:36px;height:36px;border-radius:var(--rxs);border:1px solid var(--border2);background:var(--surface);color:var(--text);font-size:20px;font-family:var(--font);font-weight:400;cursor:pointer;display:flex;align-items:center;justify-content:center;touch-action:manipulation;-webkit-appearance:none;transition:transform 0.1s,opacity 0.12s;flex-shrink:0;line-height:1;}
+.pm-btn:active{transform:scale(0.9);}
+.pm-btn:disabled{opacity:0.25;pointer-events:none;}
+.pm-btn.plus{border-color:var(--blue);color:var(--blue);background:var(--blue-bg);}
+.pm-btn.plus-craft{border-color:var(--purple);color:var(--purple);background:var(--purple-bg);}
+.pm-btn.minus{border-color:var(--border2);color:var(--text2);}
+
+.ubar{display:flex;align-items:center;gap:8px;background:var(--surface2);border-radius:var(--rsm);padding:9px 12px;margin-bottom:10px;}
+.ubar span{flex:1;font-size:12px;color:var(--text2);line-height:1.35;}
+.ubar .btn{height:36px;font-size:12px;padding:0 10px;flex-shrink:0;}
+.hnav{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--border);margin-top:10px;}
+.win-card{background:linear-gradient(135deg,#e8f5d5,#d2edae);border:1px solid var(--green);border-radius:var(--r);padding:20px;text-align:center;margin-bottom:10px;}
+.lose-card{background:linear-gradient(135deg,#fdf0ee,#f8ddd8);border:1px solid var(--red);border-radius:var(--r);padding:20px;text-align:center;margin-bottom:10px;}
+.res-badge{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;}
+.res-name{font-family:var(--display);font-size:42px;letter-spacing:1px;line-height:1.1;margin:4px 0;}
+.res-detail{font-size:14px;margin-top:4px;}
+.res-penalty{font-size:14px;font-weight:600;line-height:1.5;margin-top:12px;color:var(--red);}
+.stbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;}
+.stbl th{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;padding:5px;border-bottom:1px solid var(--border2);color:var(--text2);text-align:left;}
+.stbl td{padding:6px 5px;border-bottom:1px solid var(--border);}
+.stbl tr:last-child td{border-bottom:none;}
+.sc{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;font-size:11px;font-weight:700;}
+.sc0{border-radius:50%;background:var(--purple);color:#fff;}
+.sc1{border-radius:50%;background:var(--blue);color:#fff;}
+.sc-eagle{border-radius:50%;border:2px solid var(--blue);outline:2px solid var(--blue);outline-offset:1px;color:var(--blue);}
+.sc-birdie{border-radius:50%;border:2px solid var(--blue);color:var(--blue);}
+.sc-par{color:var(--text);}
+.sc-bog{border:2px solid var(--red);color:var(--red);}
+.sc-dbl{border:2px solid var(--red);outline:2px solid var(--red);outline-offset:1px;color:var(--red);}
+.sc-tri{border:2px solid #7a1f1f;outline:2px solid #7a1f1f;outline-offset:2px;color:#7a1f1f;}
+.legend{display:flex;flex-wrap:wrap;gap:8px;padding-top:12px;margin-top:10px;border-top:1px solid var(--border);}
+.leg{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--text2);}
+.modal-bd{position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:100;display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:calc(16px + env(safe-area-inset-top,0px)) 16px calc(16px + env(safe-area-inset-bottom,0px));}
+.modal{background:var(--surface);border-radius:var(--r);padding:16px;width:100%;max-width:460px;margin:auto;}
+.modal-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.modal-title{font-family:var(--display);font-size:30px;letter-spacing:1px;}
+.scroll-x{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.cel-wrap{position:fixed;inset:0;z-index:999;display:flex;align-items:center;justify-content:center;padding:16px;}
+.cel-bg{position:absolute;inset:0;background:rgba(0,0,0,0.65);}
+.cel-box{position:relative;background:var(--surface);border-radius:20px;padding:28px 22px 22px;text-align:center;max-width:340px;width:100%;animation:popIn 0.38s cubic-bezier(.175,.885,.32,1.275);}
+.cel-emo{font-size:56px;display:block;margin-bottom:8px;animation:emoPop 0.5s cubic-bezier(.175,.885,.32,1.275);}
+.cel-title{font-family:var(--display);font-size:38px;letter-spacing:1px;margin-bottom:6px;}
+.cel-sub{font-size:15px;color:var(--text2);line-height:1.5;}
+.cel-btn{margin-top:16px;}
+.resume-banner{display:flex;align-items:center;justify-content:space-between;background:var(--blue-bg);border:1px solid var(--blue);border-radius:var(--rsm);padding:12px 14px;margin-bottom:10px;gap:10px;}
+.resume-text{font-size:13px;color:var(--blue);font-weight:500;flex:1;}
+canvas#confettiCanvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:998;}
+@keyframes popIn{from{transform:scale(0.5) translateY(40px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}
+@keyframes emoPop{0%{transform:scale(0) rotate(-20deg)}65%{transform:scale(1.25) rotate(6deg)}100%{transform:scale(1) rotate(0)}}
+@keyframes shake{0%,100%{transform:translateX(0)}15%{transform:translateX(-8px)}30%{transform:translateX(8px)}45%{transform:translateX(-5px)}60%{transform:translateX(5px)}80%{transform:translateX(-3px)}}
+@keyframes pulseBlue{0%,100%{border-color:var(--border);background:var(--surface)}50%{border-color:var(--blue);background:var(--blue-bg)}}
+@keyframes pulseGold{0%,100%{border-color:var(--border);background:var(--surface)}50%{border-color:var(--gold);background:var(--gold-bg)}}
+.fx-shake{animation:shake 0.55s ease;}
+.fx-blue{animation:pulseBlue 0.65s ease 2;}
+.fx-gold{animation:pulseGold 0.65s ease 3;}
+</style>
+</head>
+<body>
+<canvas id="confettiCanvas" style="display:none;"></canvas>
+<div class="app">
+  <div class="hdr">
+    <h1>&#x26F3; BUCKET GOLF</h1>
+    <p>Par 4 &middot; 9 Holes &middot; No Mercy</p>
+  </div>
+  <div class="save-pill">
+    <div class="save-dot"></div>
+    <span id="saveMsg">Progress auto-saved</span>
+  </div>
+  <div id="root"></div>
+  <div id="cel"></div>
+</div>
+
+<script>
+var PAR = 4;
+var SK = 'bucket_golf_v5';
+
+/*
+  Per-hole hazard counts (separate from fireballs so +/- is clean):
+    S.waterCount[hole][playerIdx]  = number of water hazards (+1 fireball each)
+    S.craftCount[hole][playerIdx]  = number of watercraft hazards (+2 fireballs each)
+
+  Stroke bonus tracking (for reversal if score is changed):
+    S.strokeBonus[hole][playerIdx] = fireball bonus given to OTHER players from this player's 0 or 1
+*/
+var S = {
+  phase: 'setup-count',
+  playerCount: 0,
+  players: [],
+  scores: [],
+  fireballs: [],
+  holeFireballs: [],
+  strokeBonus: [],
+  waterCount: [],
+  craftCount: [],
+  currentHole: 0,
+  history: [],
+  lastAction: null,
+  showScorecard: false
+};
+
+// ── Array initializers ──
+function make9x8() {
+  var arr = [];
+  for (var h = 0; h < 9; h++) {
+    var row = [];
+    for (var p = 0; p < 8; p++) row.push(0);
+    arr.push(row);
+  }
+  return arr;
+}
+
+// ── Score info ──
+function getInfo(s) {
+  if (s === null) return { l: '', cls: '', sym: '' };
+  var d = s - PAR;
+  if (s === 0) return { l: 'Hole in Zero', cls: 'sc0', sym: '0' };
+  if (s === 1) return { l: 'Hole in One', cls: 'sc1', sym: '1' };
+  if (d <= -2) return { l: 'Eagle', cls: 'sc-eagle', sym: s };
+  if (d === -1) return { l: 'Birdie', cls: 'sc-birdie', sym: s };
+  if (d === 0) return { l: 'Par', cls: 'sc-par', sym: s };
+  if (d === 1) return { l: 'Bogey', cls: 'sc-bog', sym: s };
+  if (d === 2) return { l: 'Double Bogey', cls: 'sc-dbl', sym: s };
+  return { l: 'Triple+ Bogey', cls: 'sc-tri', sym: s };
+}
+function scHTML(s) {
+  if (s === null) return '<span style="color:#ccc;font-size:11px;">&middot;</span>';
+  var i = getInfo(s);
+  return '<span class="sc ' + i.cls + '" title="' + i.l + '">' + i.sym + '</span>';
+}
+function getTot(idx) {
+  return S.scores[idx].reduce(function(a, v) { return a + (v !== null ? v : 0); }, 0);
+}
+function holeDone(h) {
+  return S.scores.every(function(r) { return r[h] !== null; });
+}
+function allDone() {
+  return S.scores.every(function(r) { return r.every(function(v) { return v !== null; }); });
+}
+
+// ── Compute total fireballs for a player on a specific hole from hazard counts ──
+function hazardFireballsForHole(h, pi) {
+  return (S.waterCount[h][pi] * 1) + (S.craftCount[h][pi] * 2);
+}
+
+// ── Recompute all fireball totals from scratch (source of truth) ──
+function recomputeFireballs() {
+  // Reset everything
+  S.fireballs = [];
+  S.holeFireballs = [];
+  for (var i = 0; i < S.playerCount; i++) { S.fireballs.push(0); S.holeFireballs.push(0); }
+
+  var h = S.currentHole;
+
+  for (var hole = 0; hole < 9; hole++) {
+    for (var pi = 0; pi < S.playerCount; pi++) {
+      // Water/craft hazards earned BY this player on this hole
+      var hazard = hazardFireballsForHole(hole, pi);
+      S.fireballs[pi] += hazard;
+      if (hole === h) S.holeFireballs[pi] += hazard;
+
+      // Stroke bonus: if this player scored 0 or 1, others get fireballs
+      var bonus = S.strokeBonus[hole][pi];
+      if (bonus > 0) {
+        for (var oi = 0; oi < S.playerCount; oi++) {
+          if (oi !== pi) {
+            S.fireballs[oi] += bonus;
+            if (hole === h) S.holeFireballs[oi] += bonus;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ── Save / Load ──
+var _saveTimer = null;
+function persist() {
+  try {
+    localStorage.setItem(SK, JSON.stringify({
+      phase: S.phase, playerCount: S.playerCount, players: S.players,
+      scores: S.scores, fireballs: S.fireballs, holeFireballs: S.holeFireballs,
+      strokeBonus: S.strokeBonus, waterCount: S.waterCount, craftCount: S.craftCount,
+      currentHole: S.currentHole, lastAction: S.lastAction
+    }));
+    flashSave('&#10003; Saved');
+  } catch(e) {}
+}
+function hasSave() {
+  try {
+    var raw = localStorage.getItem(SK);
+    if (!raw) return false;
+    var d = JSON.parse(raw);
+    return d && d.phase && d.phase !== 'setup-count' && d.phase !== 'setup-names';
+  } catch(e) { return false; }
+}
+function loadSave() {
+  try {
+    var d = JSON.parse(localStorage.getItem(SK));
+    if (!d || !d.phase) return false;
+    S.phase = d.phase; S.playerCount = d.playerCount || 0;
+    S.players = d.players || []; S.scores = d.scores || [];
+    S.fireballs = d.fireballs || []; S.holeFireballs = d.holeFireballs || [];
+    S.strokeBonus = d.strokeBonus || make9x8();
+    S.waterCount = d.waterCount || make9x8();
+    S.craftCount = d.craftCount || make9x8();
+    S.currentHole = d.currentHole || 0; S.lastAction = d.lastAction || null;
+    S.history = []; S.showScorecard = false;
+    return true;
+  } catch(e) { return false; }
+}
+function clearSave() { try { localStorage.removeItem(SK); } catch(e) {} }
+function flashSave(msg) {
+  var el = document.getElementById('saveMsg');
+  if (el) el.innerHTML = msg;
+  clearTimeout(_saveTimer);
+  _saveTimer = setTimeout(function() {
+    var el2 = document.getElementById('saveMsg');
+    if (el2) el2.textContent = 'Progress auto-saved';
+  }, 2000);
+}
+
+// ── History / Undo ──
+function snapState() {
+  return JSON.parse(JSON.stringify({
+    scores: S.scores, fireballs: S.fireballs, holeFireballs: S.holeFireballs,
+    strokeBonus: S.strokeBonus, waterCount: S.waterCount, craftCount: S.craftCount,
+    lastAction: S.lastAction
+  }));
+}
+function saveHistory() { S.history.push(snapState()); }
+function undo() {
+  if (!S.history.length) return;
+  var p = S.history.pop();
+  S.scores = p.scores; S.fireballs = p.fireballs; S.holeFireballs = p.holeFireballs;
+  S.strokeBonus = p.strokeBonus; S.waterCount = p.waterCount; S.craftCount = p.craftCount;
+  S.lastAction = p.lastAction;
+  persist(); render();
+}
+
+// ── Navigation ──
+function initGame() {
+  S.scores = [];
+  for (var i = 0; i < S.playerCount; i++) S.scores.push([null,null,null,null,null,null,null,null,null]);
+  S.fireballs = []; S.holeFireballs = [];
+  for (var j = 0; j < S.playerCount; j++) { S.fireballs.push(0); S.holeFireballs.push(0); }
+  S.strokeBonus = make9x8(); S.waterCount = make9x8(); S.craftCount = make9x8();
+  S.history = []; S.lastAction = null; S.currentHole = 0;
+  S.phase = 'playing'; S.showScorecard = false;
+  persist();
+}
+function nextHole() {
+  if (S.currentHole < 8) { S.currentHole++; recomputeFireballs(); persist(); render(); }
+}
+function prevHole() {
+  if (S.currentHole > 0) { S.currentHole--; recomputeFireballs(); persist(); render(); }
+}
+function finishGame() { S.phase = 'results'; S.showScorecard = false; persist(); render(); celebrateEnd(); }
+function newGame() {
+  clearSave();
+  S.phase = 'setup-count'; S.playerCount = 0; S.players = []; S.scores = [];
+  S.fireballs = []; S.holeFireballs = []; S.strokeBonus = make9x8();
+  S.waterCount = make9x8(); S.craftCount = make9x8(); S.currentHole = 0;
+  S.history = []; S.lastAction = null; S.showScorecard = false;
+  document.getElementById('cel').innerHTML = ''; render();
+}
+function selectCount(n) { S.playerCount = n; S.players = []; for (var i = 0; i < n; i++) S.players.push(''); S.phase = 'setup-names'; render(); }
+function toggleCard() { S.showScorecard = !S.showScorecard; render(); }
+function confirmNewGame() {
+  document.getElementById('cel').innerHTML =
+    '<div class="cel-wrap">' +
+      '<div class="cel-bg" onclick="dismissCel()"></div>' +
+      '<div class="cel-box" style="border:2px solid var(--red);">' +
+        '<span class="cel-emo">&#x1F6A8;</span>' +
+        '<div class="cel-title" style="color:var(--red);">Start Over?</div>' +
+        '<div class="cel-sub">Your current game will be lost. You sure?</div>' +
+        '<div style="display:flex;gap:10px;margin-top:16px;justify-content:center;">' +
+          '<button class="btn" onclick="dismissCel()" style="flex:1;">Cancel</button>' +
+          '<button class="btn btn-red" onclick="dismissCel();newGame();" style="flex:1;">Yes, New Game</button>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+}
+function startGame() {
+  var names = [];
+  for (var i = 0; i < S.playerCount; i++) {
+    var el = document.getElementById('pn' + i);
+    names.push(el && el.value.trim() ? el.value.trim() : 'Player ' + (i + 1));
+  }
+  S.players = names; initGame(); render();
+}
+function resumeGame() { if (loadSave()) render(); }
+function goBackToCount() { S.phase = 'setup-count'; render(); }
+function checkNames() {
+  var btn = document.getElementById('startBtn');
+  if (!btn) return;
+  var allFilled = true;
+  for (var i = 0; i < S.playerCount; i++) {
+    var el = document.getElementById('pn' + i);
+    if (!el || !el.value.trim()) { allFilled = false; break; }
+  }
+  btn.disabled = !allFilled;
+  btn.textContent = allFilled ? 'Tee it up ⛳' : 'Name all players to continue';
+}
+
+// ── Hazard counter: add/remove water or craft per player per hole ──
+function changeHazard(pi, type, delta) {
+  saveHistory();
+  var h = S.currentHole;
+  var nm = S.players[pi];
+  if (type === 'water') {
+    S.waterCount[h][pi] = Math.max(0, S.waterCount[h][pi] + delta);
+    S.lastAction = nm + ': Water Hazards = ' + S.waterCount[h][pi];
+    if (delta > 0) {
+      showCel('&#x1F4A7;', 'Water Hazard!', nm + ' found the drink. +1 fireball.', true);
+      fxRow(pi, 'fx-shake');
+    }
+  } else {
+    S.craftCount[h][pi] = Math.max(0, S.craftCount[h][pi] + delta);
+    S.lastAction = nm + ': Watercraft Hazards = ' + S.craftCount[h][pi];
+    if (delta > 0) {
+      showCel('&#x26F5;', 'Watercraft Required?!', nm + ' needed a boat. That\'s a talent. +2 fireballs.', true);
+      fxRow(pi, 'fx-shake');
+    }
+  }
+  recomputeFireballs();
+  persist(); render();
+}
+
+// ── Stroke (with bonus reversal via recompute) ──
+function setStroke(pi, hole, val) {
+  saveHistory();
+  S.scores[pi][hole] = val;
+  var nm = S.players[pi];
+  var inf = getInfo(val);
+
+  // Update strokeBonus for this player on this hole
+  if (val === 0) S.strokeBonus[hole][pi] = 2;
+  else if (val === 1) S.strokeBonus[hole][pi] = 1;
+  else S.strokeBonus[hole][pi] = 0;
+
+  // Recompute all fireballs from scratch — cleanly handles corrections
+  recomputeFireballs();
+
+  if (val === 0) {
+    S.lastAction = nm + ': Hole in Zero! Everyone else +2 🔥';
+    showCel('🦄', 'HOLE IN ZERO!', nm + ' is a fucking legend. Everyone else drinks twice.');
+    fxRow(pi, 'fx-gold');
+  } else if (val === 1) {
+    S.lastAction = nm + ': Hole in One! Everyone else +1 🔥';
+    showCel('🎯', 'HOLE IN ONE!', nm + ' is a bucket golf genius. Everyone else drinks.');
+    fxRow(pi, 'fx-blue');
+  } else if (val === 2) {
+    S.lastAction = nm + ': Eagle';
+    showCel('🦅', 'Eagle!', nm + ' &mdash; 2 under par. Absolutely cooking.');
+    fxRow(pi, 'fx-blue');
+  } else if (val === 3) {
+    S.lastAction = nm + ': Birdie';
+    showCel('🐦', 'Birdie!', nm + ' &mdash; 1 under par. Smooth.');
+    fxRow(pi, 'fx-blue');
+  } else if (val === 5) {
+    S.lastAction = nm + ': Bogey';
+    showCel('😬', 'Bogey.', nm + ' &mdash; 1 over par. Walk of shame.', true);
+    fxRow(pi, 'fx-shake');
+  } else if (val === 6) {
+    S.lastAction = nm + ': Double Bogey';
+    showCel('😤', 'Double Bogey!!', nm + ' might wanna reconsider their life choices.', true);
+    fxRow(pi, 'fx-shake');
+  } else if (val >= 7) {
+    S.lastAction = nm + ': Triple+ Bogey';
+    showCel('😵', 'Triple+ Bogey!!!', nm + ' is making this look hard. Someone hand them a beer.', true);
+    fxRow(pi, 'fx-shake');
+  } else {
+    S.lastAction = nm + ': ' + val + ' strokes (' + inf.l + ')';
+  }
+  persist(); render();
+}
+
+// ── Animations ──
+function fxRow(pi, cls) {
+  var el = document.getElementById('pr' + pi);
+  if (!el) return;
+  el.classList.remove('fx-shake', 'fx-blue', 'fx-gold');
+  void el.offsetWidth;
+  el.classList.add(cls);
+  setTimeout(function() { var e = document.getElementById('pr' + pi); if (e) e.classList.remove(cls); }, 1500);
+}
+
+// ── Confetti ──
+function launchConfetti(duration) {
+  var cv = document.getElementById('confettiCanvas');
+  cv.style.display = 'block';
+  var ctx = cv.getContext('2d');
+  cv.width = window.innerWidth; cv.height = window.innerHeight;
+  var colors = ['#3B6D11','#185FA5','#993C1D','#534AB7','#BA7517','#e67e22'];
+  var pts = [];
+  for (var k = 0; k < 130; k++) {
+    pts.push({ x: Math.random()*cv.width, y: Math.random()*-cv.height, r: Math.random()*6+3,
+      d: Math.random()*120, c: colors[Math.floor(Math.random()*colors.length)],
+      tilt: Math.random()*10-10, ts: Math.random()*0.1+0.02 });
+  }
+  var startTime = null;
+  function frame(ts) {
+    if (startTime === null) startTime = ts;
+    ctx.clearRect(0, 0, cv.width, cv.height);
+    for (var i = 0; i < pts.length; i++) {
+      var p = pts[i];
+      p.y += 3 + Math.sin(p.d)*2; p.x += Math.sin(p.d)*1.5; p.d += p.ts; p.tilt += 0.1;
+      ctx.beginPath(); ctx.lineWidth = p.r; ctx.strokeStyle = p.c;
+      ctx.moveTo(p.x+p.tilt+p.r/2, p.y); ctx.lineTo(p.x+p.tilt, p.y+p.tilt+p.r/2); ctx.stroke();
+      if (p.y > cv.height) p.y = -10;
+    }
+    if (ts - startTime < duration) requestAnimationFrame(frame);
+    else { ctx.clearRect(0, 0, cv.width, cv.height); cv.style.display = 'none'; }
+  }
+  requestAnimationFrame(frame);
+}
+
+// ── Celebrations ──
+function showCel(emo, title, sub, bad) {
+  if (!bad) launchConfetti(2000);
+  document.getElementById('cel').innerHTML =
+    '<div class="cel-wrap">' +
+      '<div class="cel-bg" onclick="dismissCel()"></div>' +
+      '<div class="cel-box"' + (bad ? ' style="border:2px solid var(--red);"' : '') + '>' +
+        '<span class="cel-emo">' + emo + '</span>' +
+        '<div class="cel-title"' + (bad ? ' style="color:var(--red);"' : '') + '>' + title + '</div>' +
+        '<div class="cel-sub">' + sub + '</div>' +
+        '<button class="btn ' + (bad ? 'btn-red' : 'btn-dark') + ' cel-btn" onclick="dismissCel()">' + (bad ? 'Oof.' : 'Niiice!') + '</button>' +
+      '</div>' +
+    '</div>';
+}
+function dismissCel() { document.getElementById('cel').innerHTML = ''; }
+function celebrateEnd() {
+  var ranked = S.players.map(function(n, i) { return { n: n, s: getTot(i) }; });
+  ranked.sort(function(a, b) { return a.s - b.s; });
+  var w = ranked[0]; var l = ranked[ranked.length - 1];
+  launchConfetti(5000);
+  setTimeout(function() {
+    document.getElementById('cel').innerHTML =
+      '<div class="cel-wrap"><div class="cel-bg"></div><div class="cel-box">' +
+        '<span class="cel-emo">&#x1F3C6;</span>' +
+        '<div class="cel-title">' + w.n + ' WINS!</div>' +
+        '<div class="cel-sub" style="margin-bottom:10px;">' + w.s + ' strokes &mdash; bucket golf champion</div>' +
+        '<div style="border-top:1px solid var(--border);padding-top:12px;margin-top:4px;">' +
+          '<div style="font-size:14px;font-weight:600;color:var(--red);line-height:1.5;">&#x1F37A; ' + l.n + ', you can shotgun a beer AND take a Fireball shot, you little bitch.</div>' +
+        '</div>' +
+        '<button class="btn btn-dark cel-btn" onclick="dismissCel()">Let\'s go!</button>' +
+      '</div></div>';
+  }, 500);
+}
+
+// ── Scorecard ──
+var LEGEND = '<div class="legend">' +
+  '<span class="leg"><span class="sc sc0" style="width:20px;height:20px;font-size:9px;">0</span>Zero</span>' +
+  '<span class="leg"><span class="sc sc1" style="width:20px;height:20px;font-size:9px;">1</span>Ace</span>' +
+  '<span class="leg"><span class="sc sc-eagle" style="width:20px;height:20px;font-size:9px;">2</span>Eagle</span>' +
+  '<span class="leg"><span class="sc sc-birdie" style="width:20px;height:20px;font-size:9px;">3</span>Birdie</span>' +
+  '<span class="leg"><span class="sc sc-par" style="width:20px;height:20px;font-size:9px;">4</span>Par</span>' +
+  '<span class="leg"><span class="sc sc-bog" style="width:20px;height:20px;font-size:9px;">5</span>Bogey</span>' +
+  '<span class="leg"><span class="sc sc-dbl" style="width:20px;height:20px;font-size:9px;">6</span>Double</span>' +
+  '<span class="leg"><span class="sc sc-tri" style="width:20px;height:20px;font-size:9px;">7+</span>Triple+</span>' +
+'</div>';
+
+function buildCard(modal) {
+  var h = S.currentHole;
+  var rows = '';
+  for (var pi = 0; pi < S.players.length; pi++) {
+    var cells = '';
+    for (var i = 0; i < 9; i++) {
+      var v = S.scores[pi][i];
+      var cur = modal && S.phase === 'playing' && i === h;
+      cells += '<td style="text-align:center;padding:5px 4px;' + (cur ? 'background:#E6F1FB;' : '') + '">' + scHTML(v) + '</td>';
+    }
+    var t = getTot(pi);
+    var played = 0;
+    for (var k = 0; k < S.scores[pi].length; k++) { if (S.scores[pi][k] !== null) played++; }
+    var vp = t - (played * PAR);
+    var vs = vp === 0 ? 'E' : (vp > 0 ? '+' + vp : vp);
+    var vpColor = vp < 0 ? 'var(--blue)' : (vp > 0 ? 'var(--red)' : 'var(--text2)');
+    rows += '<tr><td style="font-weight:600;white-space:nowrap;padding:5px;">' + S.players[pi] + '</td>' + cells +
+      '<td style="text-align:center;font-weight:700;padding:5px;">' + t + '</td>' +
+      '<td style="text-align:center;font-size:12px;font-weight:600;padding:5px;color:' + vpColor + ';">' + vs + '</td></tr>';
+  }
+  var hdrs = '';
+  for (var n = 0; n < 9; n++) {
+    var isCur = modal && S.phase === 'playing' && n === h;
+    hdrs += '<th style="text-align:center;' + (isCur ? 'color:var(--blue);' : '') + '">' + (n + 1) + '</th>';
+  }
+  return '<div class="scroll-x"><table class="stbl"><thead><tr><th>Player</th>' + hdrs +
+    '<th style="text-align:center;">Tot</th><th style="text-align:center;">vPar</th></tr></thead><tbody>' + rows + '</tbody></table></div>' + LEGEND;
+}
+
+// ── Render ──
+function render() {
+  var root = document.getElementById('root');
+  if (!root) return;
+
+  if (S.phase === 'setup-count') {
+    var resumeBanner = hasSave()
+      ? '<div class="resume-banner"><div class="resume-text">&#x1F4C2; You have a game in progress</div><button class="btn btn-green" onclick="resumeGame()" style="height:38px;font-size:13px;">Resume</button></div>'
+      : '';
+    var countBtns = '';
+    var counts = [2,3,4,5,6,7,8];
+    for (var c = 0; c < counts.length; c++) countBtns += '<button class="cnt-btn" onclick="selectCount(' + counts[c] + ')">' + counts[c] + '</button>';
+    root.innerHTML = resumeBanner + '<div class="card"><div class="lbl">How many players?</div><div class="count-grid">' + countBtns + '</div></div>';
+    return;
+  }
+
+  if (S.phase === 'setup-names') {
+    var inputs = '';
+    for (var ii = 0; ii < S.playerCount; ii++) {
+      inputs += '<div class="pinput"><div class="nbadge">' + (ii+1) + '</div>' +
+        '<input type="text" id="pn' + ii + '" placeholder="Player ' + (ii+1) + '" value="' + (S.players[ii]||'') + '" autocomplete="off" autocorrect="off" autocapitalize="words" spellcheck="false" oninput="checkNames()"/></div>';
+    }
+    root.innerHTML =
+      '<div class="card">' +
+        '<div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">' +
+          '<button class="btn" onclick="goBackToCount()" style="height:36px;padding:0 12px;font-size:13px;">&#8592; Change players</button>' +
+        '</div>' +
+        '<div class="lbl">Name your players</div>' +
+        inputs +
+        '<button id="startBtn" class="btn btn-green" style="width:100%;margin-top:6px;font-size:15px;" onclick="startGame()" disabled>Name all players to continue</button>' +
+      '</div>';
+    setTimeout(function() { var f = document.getElementById('pn0'); if (f) f.focus(); checkNames(); }, 80);
+    return;
+  }
+
+  if (S.phase === 'playing') {
+    var h = S.currentHole;
+    var ub = S.history.length
+      ? '<div class="ubar"><span>' + (S.lastAction||'') + '</span><button class="btn" onclick="undo()">Undo</button></div>'
+      : '';
+
+    var rows = '';
+    for (var pi = 0; pi < S.players.length; pi++) {
+      var sv = S.scores[pi][h];
+      var inf = sv !== null ? getInfo(sv) : null;
+      var opts = '<option value="" disabled' + (sv === null ? ' selected' : '') + '>Pick</option>';
+      for (var v = 0; v <= 10; v++) opts += '<option value="' + v + '"' + (sv === v ? ' selected' : '') + '>' + v + '</option>';
+      var holeChip = sv !== null ? '<span class="sc ' + inf.cls + '" style="width:22px;height:22px;font-size:11px;">' + inf.sym + '</span>' : '&mdash;';
+
+      var wc = S.waterCount[h][pi];
+      var cc = S.craftCount[h][pi];
+
+      // Hazard +/- rows
+      var hazardHTML =
+        '<div class="hazard-section">' +
+          '<div class="hazard-row">' +
+            '<span class="hazard-icon">&#x1F4A7;</span>' +
+            '<span class="hazard-label">Water Hazard <span style="font-size:10px;color:var(--text3);">(+1 &#x1F525; each)</span></span>' +
+            '<button class="pm-btn minus" onclick="changeHazard(' + pi + ',\'water\',-1)"' + (wc === 0 ? ' disabled' : '') + '>&#8722;</button>' +
+            '<span class="hazard-count blue">' + wc + '</span>' +
+            '<button class="pm-btn plus" onclick="changeHazard(' + pi + ',\'water\',1)">+</button>' +
+          '</div>' +
+          '<div class="hazard-row">' +
+            '<span class="hazard-icon">&#x26F5;</span>' +
+            '<span class="hazard-label">Watercraft <span style="font-size:10px;color:var(--text3);">(+2 &#x1F525; each)</span></span>' +
+            '<button class="pm-btn minus" onclick="changeHazard(' + pi + ',\'craft\',-1)"' + (cc === 0 ? ' disabled' : '') + '>&#8722;</button>' +
+            '<span class="hazard-count purple">' + cc + '</span>' +
+            '<button class="pm-btn plus-craft pm-btn" onclick="changeHazard(' + pi + ',\'craft\',1)">+</button>' +
+          '</div>' +
+        '</div>';
+
+      rows +=
+        '<div class="prow" id="pr' + pi + '">' +
+          '<div class="pname">' + S.players[pi] + (sv !== null ? '<span class="pname-tag">' + inf.l + '</span>' : '') + '</div>' +
+          '<div class="chips">' +
+            '<div class="chip"><div class="chip-lbl">Hole Strokes</div><div class="chip-val">' + holeChip + '</div></div>' +
+            '<div class="chip"><div class="chip-lbl">Game Strokes</div><div class="chip-val">' + getTot(pi) + '</div></div>' +
+            '<div class="chip"><div class="chip-lbl">Hole &#x1F525;</div><div class="chip-val fire">' + S.holeFireballs[pi] + '</div></div>' +
+            '<div class="chip"><div class="chip-lbl">Game &#x1F525;</div><div class="chip-val fire">' + S.fireballs[pi] + '</div></div>' +
+          '</div>' +
+          '<div class="stroke-row"><span class="stroke-lbl">Strokes:</span>' +
+            '<select class="stroke-sel" onchange="setStroke(' + pi + ',' + h + ',parseInt(this.value))">' + opts + '</select>' +
+          '</div>' +
+          hazardHTML +
+        '</div>';
+    }
+
+    var dots = '';
+    for (var di = 0; di < 9; di++) dots += '<div class="hdot' + (di < h ? ' done' : di === h ? ' cur' : '') + '"></div>';
+
+    var navRight = h < 8
+      ? '<button class="btn btn-dark" onclick="nextHole()"' + (!holeDone(h) ? ' disabled' : '') + '>Next &rarr;</button>'
+      : '<button class="btn btn-green" onclick="finishGame()"' + (!allDone() ? ' disabled' : '') + '>Finish &#x1F3C1;</button>';
+
+    var scorecard = S.showScorecard
+      ? '<div class="modal-bd" onclick="if(event.target===this)toggleCard()"><div class="modal">' +
+          '<div class="modal-hdr"><div class="modal-title">SCORECARD</div>' +
+          '<button class="btn" onclick="toggleCard()" style="height:38px;padding:0 12px;">&#x2715; Close</button></div>' +
+          buildCard(true) + '</div></div>'
+      : '';
+
+    root.innerHTML = ub +
+      '<div class="topbar">' +
+        '<div><div class="hole-big">HOLE ' + (h+1) + '</div><div class="hole-sm">' + (h+1) + ' of 9 &middot; Par ' + PAR + '</div></div>' +
+        '<div style="display:flex;gap:6px;">' +
+          '<button class="btn" onclick="toggleCard()" style="font-size:13px;">&#x1F4CB; Card</button>' +
+          '<button class="btn btn-red" onclick="confirmNewGame()" style="font-size:13px;">New Game</button>' +
+        '</div>' +
+      '</div>' +
+      '<div class="card" style="padding:12px;">' + rows +
+        '<div class="hdots">' + dots + '</div>' +
+        '<div class="hnav">' +
+          '<button class="btn" onclick="prevHole()"' + (h === 0 ? ' disabled' : '') + '>&larr; Back</button>' +
+          navRight +
+        '</div>' +
+      '</div>' + scorecard;
+    return;
+  }
+
+  if (S.phase === 'results') {
+    var totals = S.players.map(function(_, i) { return getTot(i); });
+    var ranked = S.players.map(function(nm, i) { return { nm: nm, s: totals[i], fb: S.fireballs[i] }; });
+    ranked.sort(function(a, b) { return a.s - b.s; });
+    var w = ranked[0]; var l = ranked[ranked.length-1];
+    var standRows = '';
+    for (var ri = 0; ri < ranked.length; ri++) {
+      var rp = ranked[ri];
+      var rvp = rp.s - (9*PAR); var rvs = rvp === 0 ? 'E' : (rvp > 0 ? '+'+rvp : rvp);
+      var rcol = rvp < 0 ? 'var(--blue)' : (rvp > 0 ? 'var(--red)' : 'var(--text2)');
+      standRows += '<tr><td style="font-weight:700;">' + (ri+1) + '</td><td style="font-weight:600;">' + rp.nm + '</td><td>' + rp.s + '</td><td style="color:' + rcol + ';">' + rvs + '</td><td>&#x1F525; ' + rp.fb + '</td></tr>';
+    }
+    root.innerHTML =
+      '<div class="win-card">' +
+        '<div class="res-badge" style="color:var(--green);">&#x1F3C6; Winner</div>' +
+        '<div class="res-name" style="color:var(--green);">' + w.nm + '</div>' +
+        '<div class="res-detail" style="color:var(--green);">' + w.s + ' strokes &middot; &#x1F525; ' + w.fb + ' fireballs</div>' +
+      '</div>' +
+      '<div class="lose-card">' +
+        '<div class="res-badge" style="color:var(--red);">&#x1F480; Loser</div>' +
+        '<div class="res-name" style="color:var(--red);">' + l.nm + '</div>' +
+        '<div class="res-detail" style="color:var(--red);">' + l.s + ' strokes &middot; &#x1F525; ' + l.fb + ' fireballs</div>' +
+        '<div class="res-penalty">' + l.nm + ', you can shotgun a beer AND take a Fireball shot, you little bitch.</div>' +
+      '</div>' +
+      '<div class="card"><div class="lbl">Final Standings</div>' +
+        '<table class="stbl"><thead><tr><th>#</th><th>Player</th><th>Strokes</th><th>vs Par</th><th>&#x1F525;</th></tr></thead><tbody>' + standRows + '</tbody></table>' +
+      '</div>' +
+      '<div class="card"><div class="lbl">Scorecard</div>' + buildCard(false) + '</div>' +
+      '<div style="text-align:center;padding:8px 0 16px;">' +
+        '<button class="btn btn-dark" style="min-width:160px;font-size:15px;height:48px;" onclick="newGame()">New Game &#x26F3;</button>' +
+      '</div>';
+  }
+}
+
+// ── Boot ──
+(function() {
+  try {
+    var raw = localStorage.getItem(SK);
+    if (raw) {
+      var d = JSON.parse(raw);
+      if (d && d.phase && d.phase !== 'setup-count' && d.phase !== 'setup-names') {
+        S.phase = d.phase; S.playerCount = d.playerCount || 0;
+        S.players = d.players || []; S.scores = d.scores || [];
+        S.fireballs = d.fireballs || []; S.holeFireballs = d.holeFireballs || [];
+        S.strokeBonus = d.strokeBonus || make9x8();
+        S.waterCount = d.waterCount || make9x8();
+        S.craftCount = d.craftCount || make9x8();
+        S.currentHole = d.currentHole || 0; S.lastAction = d.lastAction || null;
+        S.history = []; S.showScorecard = false;
+      }
+    }
+  } catch(e) {}
+  render();
+})();
+</script>
+</body>
+</html>
